@@ -82,7 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib%{name}%{version}.so
 %dir %{_ulibdir}/%{name}%{version}
 %{_ulibdir}/%{name}%{version}/*.tcl
+%if "%{_lib}" != "lib"
 %{_ulibdir}/lib*%{version}.so
+%endif
 %{_mandir}/mann/*
 
 %files devel
