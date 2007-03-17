@@ -1,0 +1,20 @@
+--- tile/Makefile.in.old	2006-09-21 20:22:33.000000000 +0200
++++ tile/Makefile.in	2007-03-17 03:28:55.858413451 +0100
+@@ -162,7 +162,7 @@
+ 
+ install-package :
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+-	$(INSTALL_PROGRAM) $(PKG_LIB_FILE) $(DESTDIR)$(pkglibdir)/$(PKG_LIB_FILE)
++	$(INSTALL_PROGRAM) $(PKG_LIB_FILE) $(DESTDIR)$(libdir)/$(PKG_LIB_FILE)
+ 	$(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
+ 	for p in $(srcdir)/library/*.tcl ; do \
+ 	    destp=`basename $$p`; \
+@@ -224,7 +224,7 @@
+ 	(\
+ 	echo 'if {[catch {package require Tcl 8.4}]} return';\
+ 	echo 'package ifneeded $(PACKAGE_NAME) $(PACKAGE_VERSION) \
+-	    [list load [file join $$dir $(PKG_LIB_FILE)] $(PACKAGE_NAME)]'\
++	    [list load [file join $$dir .. $(PKG_LIB_FILE)] $(PACKAGE_NAME)]'\
+ 	) > pkgIndex.tcl
+ 
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
