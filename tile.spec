@@ -84,7 +84,7 @@ fi
 
 ln -sf %{_libdir}/lib%{name}%{version}.so $RPM_BUILD_ROOT%{_libdir}/lib%{name}.so
 
-mkdir $RPM_BUILD_ROOT%{_mandir}/man{n,3}
+install -d $RPM_BUILD_ROOT%{_mandir}/man{n,3}
 install doc/*.n $RPM_BUILD_ROOT%{_mandir}/mann
 install doc/*.3 $RPM_BUILD_ROOT%{_mandir}/man3
 
