@@ -1,5 +1,7 @@
 %define tkver	8.4
+#
 Summary:	Tile - an improved themeing engine for Tk
+Summary(pl.UTF-8):	Tile - ulepszony silnik motywów dla Tk
 Name:		tile
 Version:	0.7.8
 Release:	1
@@ -24,8 +26,18 @@ dynamic theme engine to produce a wide variety of alternative user
 interface styles. Tile widgets complement the existing Tk widgets, and
 Tile is currently being incorporated directly into Tk.
 
+%description -l pl.UTF-8
+Zestaw Widgetów Tile jest nowej generacji reimplementacją wielu z
+podstawowych widgetów Tk oraz rozszerzeniem ich o kilka nowych. Przy
+użyciu Tile aplikacje Tk mogą zyskać nowy wygląd, znacznie bliższy
+natywnemu dla danej platformy, a także wykorzystać nowoczesny,
+dynamiczny silnik obsługi motywów do wytworzenia różnorodnych,
+alternatywnych styli użytkownika. Zestaw widgetów Tile uzupełnia
+istniejące elementy Tk i jest obecnie do niego wcielany.
+
 %package devel
 Summary:	Tile - development files
+Summary(pl.UTF-8):	Tile - pliki rozwojowe
 Group:		Development/Languages/Tcl
 Requires:	%{name} = %{version}-%{release}
 Requires:	tk-devel >= %{tkver}
@@ -33,13 +45,20 @@ Requires:	tk-devel >= %{tkver}
 %description devel
 The Tile Widget Set development files.
 
+%description -l pl.UTF-8
+Pliki rozwojowe Zestawu Widgetów Tile.
+
 %package demo
 Summary:	Tile - demo programs
+Summary(pl.UTF-8):	Tile - programy demonstracyjne
 Group:		Development/Languages/Tcl
 Requires:	%{name} = %{version}-%{release}
 
 %description demo
 The Tile Widget Set demo programs.
+
+%description -l pl.UTF-8
+Programy demonstracyjne Zestawu Widgetów Tile.
 
 %prep
 %setup -q
