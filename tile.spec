@@ -32,7 +32,7 @@ podstawowych widgetów Tk oraz rozszerzeniem ich o kilka nowych. Przy
 użyciu Tile aplikacje Tk mogą zyskać nowy wygląd, znacznie bliższy
 natywnemu dla danej platformy, a także wykorzystać nowoczesny,
 dynamiczny silnik obsługi motywów do wytworzenia różnorodnych,
-alternatywnych styli użytkownika. Zestaw widgetów Tile uzupełnia
+alternatywnych stylów użytkownika. Zestaw widgetów Tile uzupełnia
 istniejące elementy Tk i jest obecnie do niego wcielany.
 
 %package devel
@@ -78,7 +78,7 @@ install -d $RPM_BUILD_ROOT{%{_mandir},%{_ulibdir}}
 	 DESTDIR=$RPM_BUILD_ROOT
 
 if [ "%{_libdir}" != "%{_ulibdir}" ] ; then
-	mv $RPM_BUILD_ROOT%{_libdir}/%{name}%{version} $RPM_BUILD_ROOT%{_ulibdir}/
+	mv $RPM_BUILD_ROOT%{_libdir}/%{name}%{version} $RPM_BUILD_ROOT%{_ulibdir}
 	ln -sf %{_libdir}/lib%{name}%{version}.so $RPM_BUILD_ROOT%{_ulibdir}/lib%{name}%{version}.so
 fi
 
@@ -88,7 +88,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man{n,3}
 install doc/*.n $RPM_BUILD_ROOT%{_mandir}/mann
 install doc/*.3 $RPM_BUILD_ROOT%{_mandir}/man3
 
-mv demos $RPM_BUILD_ROOT%{_ulibdir}/%{name}%{version}
+cp -a demos $RPM_BUILD_ROOT%{_ulibdir}/%{name}%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -109,8 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/lib%{name}.so
-%{_includedir}/*
 %{_libdir}/libttkstub.a
+%{_includedir}/*
 %{_mandir}/man3/*
 
 %files demo
