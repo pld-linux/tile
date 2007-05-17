@@ -88,6 +88,12 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man{n,3}
 install doc/*.n $RPM_BUILD_ROOT%{_mandir}/mann
 install doc/*.3 $RPM_BUILD_ROOT%{_mandir}/man3
 
+# Rename conflicting manpages.
+for i in $RPM_BUILD_ROOT%{_mandir}/mann/*.n
+do
+	mv $i $RPM_BUILD_ROOT%{_mandir}/mann/ttk::`basename $i`
+done
+
 cp -a demos $RPM_BUILD_ROOT%{_ulibdir}/%{name}%{version}
 
 %clean
