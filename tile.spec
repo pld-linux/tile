@@ -45,7 +45,7 @@ Requires:	tk-devel >= %{tkver}
 %description devel
 The Tile Widget Set development files.
 
-%description -l pl.UTF-8
+%description devel -l pl.UTF-8
 Pliki rozwojowe Zestawu Widgetów Tile.
 
 %package demo
@@ -57,7 +57,7 @@ Requires:	%{name} = %{version}-%{release}
 %description demo
 The Tile Widget Set demo programs.
 
-%description -l pl.UTF-8
+%description demo -l pl.UTF-8
 Programy demonstracyjne Zestawu Widgetów Tile.
 
 %prep
